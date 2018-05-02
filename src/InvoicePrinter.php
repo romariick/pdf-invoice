@@ -385,7 +385,7 @@ class InvoicePrinter extends FPDF
                 $this->from         = $to;
             }
 
-            if ($this->display_tofrom === true) {
+            if ($this->display_tofrom === true && $this->from !== null && $this->to !== null) {
                 $this->Cell($width, $lineheight, strtoupper($this->lang['from']), 0, 0, 'L');
                 $this->Cell(0, $lineheight, strtoupper($this->lang['to']), 0, 0, 'L');
                 $this->Ln(7);
